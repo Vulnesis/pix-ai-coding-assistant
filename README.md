@@ -4,6 +4,8 @@
 
 # Pix: Vulnetix for coding agents
 
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/Vulnetix/pix-ai-coding-assistant)
+
 Three hooks and eighteen skills. The hooks interrupt only when your agent is
 about to do something your own policy disagrees with; the skills cover the work
 that needs your working tree.
