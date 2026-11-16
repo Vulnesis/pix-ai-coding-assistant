@@ -193,3 +193,8 @@ Every skill under `vulnetix/skills/` must have:
 4. `evals/trigger-eval.json` — 10 `should_trigger` + 10 `should_not_trigger` queries, per [Sogl, "Skills Without Evals Are Just Markdown and Hope"](https://dev.to/danielsogl/skills-without-evals-are-just-markdown-and-hope-3a71).
 
 SKILL.md structure is enforced locally by `pre-commit` (see `.pre-commit-config.yaml`) and on PRs by `.github/workflows/skill-validator.yml` — both run [`agent-ecosystem/skill-validator`](https://github.com/agent-ecosystem/skill-validator) with `--strict --allow-dirs=evals`.
+
+### Discovery indexes
+
+- **Context7.** `context7.json` scopes the Context7 library (an index coding agents query). `.github/workflows/context7.yml` asks Context7 to re-index (`POST https://context7.com/api/v1/refresh`) on every push to `main`, with the `CONTEXT7_API_KEY` secret, for the library in the `CONTEXT7_LIBRARY` repository variable (default `/vulnetix/pix-ai-coding-assistant`). Without the secret it skips with a notice; a 429, a 5xx or no answer is a warning, because Context7 also re-indexes on its own schedule; any other refusal fails the job, since it means the key or library name is wrong.
+- **DeepWiki.** The README's Ask DeepWiki badge links the repository's DeepWiki page. DeepWiki has no submission API, so nothing runs in CI.
