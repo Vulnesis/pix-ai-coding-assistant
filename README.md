@@ -210,4 +210,4 @@ Apache-2.0. See [LICENSE](LICENSE).
 - [MCP server](https://www.vulnes.is/features/mcp-server)
 - [VDB API reference](https://redocly.github.io/redoc/?url=https://api.vdb.vulnes.is/v1/spec)
 
-Issues: [github.com/Vulnetix/pix-ai-coding-assistant](https://github.com/Vulnetix/pix-ai-coding-assistant).
+Issues: [github.com/Vulnetix/pix-ai-coding-assistant](https://github.com/Vulnesis/pix-ai-coding-assistant).

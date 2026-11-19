@@ -6,7 +6,7 @@
     "name": "Vulnesis",
     "url": "https://vulnes.is"
   },
-  "repository": "https://github.com/Vulnetix/pix-ai-coding-assistant",
+  "repository": "https://github.com/Vulnesis/pix-ai-coding-assistant",
   "license": "Apache-2.0",
   "keywords": ["security", "vulnerability", "dependency", "scanning", "exploit", "cve", "sbom", "sca"]
 }

