@@ -11,7 +11,7 @@ metadata:
   cooldown: per-session
   chain: "verify-fix"
 ---
-# Vulnetix IaC Scan Skill
+# Vulnesis IaC Scan Skill
 
 ## Use when
 

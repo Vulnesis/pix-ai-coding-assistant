@@ -7,7 +7,7 @@
     "Check for XXE patterns with rule VNX-XXE-001",
     "Gate the PR on critical SAST findings",
     "Audit src/auth for CWE-89 patterns",
-    "Augment my Semgrep rules with Vulnetix SAST",
+    "Augment my Semgrep rules with Vulnesis SAST",
     "Static scan the changed files before merge",
     "Run sast-scan with --rule-id VNX-CWE-79-001",
     "Find injection sinks in the recently changed Go files"

@@ -11,7 +11,7 @@ metadata:
   cooldown: per-session
   chain: "verify-fix, vex-publish"
 ---
-# Vulnetix Fix Intelligence Skill
+# Vulnesis Fix Intelligence Skill
 
 ## Use when
 

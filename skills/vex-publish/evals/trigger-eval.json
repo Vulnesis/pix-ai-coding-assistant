@@ -6,7 +6,7 @@
     "Build a CycloneDX VEX document from .vulnetix/memory.yaml",
     "A customer needs an OpenVEX attestation for the latest delivery",
     "Attach VEX status as a comment on this PR",
-    "Sign the VEX document with cosign and upload it to Vulnetix",
+    "Sign the VEX document with cosign and upload it to Vulnesis",
     "I need the durable record of what was decided — produce VEX output",
     "Render an attestation showing not_affected and fixed entries",
     "Post the VEX summary to PR 482 so reviewers can see dispositions",

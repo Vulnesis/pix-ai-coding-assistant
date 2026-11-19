@@ -11,7 +11,7 @@ metadata:
   cooldown: per-session
   chain: "dep-resolve, fix"
 ---
-# Vulnetix EOL Check Skill
+# Vulnesis EOL Check Skill
 
 ## Use when
 

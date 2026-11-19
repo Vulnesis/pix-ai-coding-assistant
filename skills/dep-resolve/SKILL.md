@@ -11,7 +11,7 @@ metadata:
   cooldown: per-session
   chain: "dependency-choice, fix, verify-fix"
 ---
-# Vulnetix Dependency Resolution Skill
+# Vulnesis Dependency Resolution Skill
 
 ## Use when
 

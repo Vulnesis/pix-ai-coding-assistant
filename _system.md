@@ -1,6 +1,6 @@
 # Pix — system reference
 
-Vulnetix for coding agents: three hooks, eighteen skills, five subagents. This
+Vulnesis for coding agents: three hooks, eighteen skills, five subagents. This
 document is the architecture; `README.md` is the user-facing front door and
 `skills/_lib/contract.md` is the contract every skill inherits.
 
@@ -17,9 +17,9 @@ graph TB
         CALL["Tool call"]
     end
 
-    subgraph vulnetix["Vulnetix"]
-        MCP["MCP server<br/>mcp.vulnetix.com<br/>31 tools · data lookups"]
-        CLI["Vulnetix CLI<br/>local scan, manifest edits,<br/>community tier"]
+    subgraph vulnetix["Vulnesis"]
+        MCP["MCP server<br/>mcp.vulnes.is<br/>31 tools · data lookups"]
+        CLI["Vulnesis CLI<br/>local scan, manifest edits,<br/>community tier"]
         SK["18 skills<br/>local procedures"]
         HK["3 hooks<br/>vulnetix agent hook"]
         MEM[".vulnetix/memory.yaml<br/>durable decisions"]

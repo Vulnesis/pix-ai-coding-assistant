@@ -11,7 +11,7 @@ metadata:
   cooldown: per-session
   chain: "dependency-choice"
 ---
-# Vulnetix Typosquat Check Skill
+# Vulnesis Typosquat Check Skill
 
 ## Use when
 

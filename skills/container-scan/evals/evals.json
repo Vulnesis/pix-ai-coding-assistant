@@ -4,7 +4,7 @@
     {
       "id": 1,
       "prompt": "Scan my Dockerfile before I build — looking for misconfig and base-image CVEs.",
-      "expected_output": "A Vulnetix container analysis of the Dockerfile with findings on base-image risk, EOL bases, exposed secrets, missing USER, root processes, healthchecks, and vulnerable system packages.",
+      "expected_output": "A Vulnesis container analysis of the Dockerfile with findings on base-image risk, EOL bases, exposed secrets, missing USER, root processes, healthchecks, and vulnerable system packages.",
       "expectations": [
         "`.vulnetix/capabilities.yaml` is read for `binaries.{docker,podman,trivy,grype,syft}` and `repo.{dockerfile,containerfile,compose}`",
         "`vulnetix containers --paths $DOCKERFILE_PATHS -o json > .vulnetix/containers.${TIMESTAMP}.json` is invoked",
@@ -28,10 +28,10 @@
     {
       "id": 3,
       "prompt": "Build a CycloneDX SBOM for our prod image plus a CVE list.",
-      "expected_output": "Syft-generated CycloneDX JSON SBOM alongside a Vulnetix/Trivy CVE table for the same image.",
+      "expected_output": "Syft-generated CycloneDX JSON SBOM alongside a Vulnesis/Trivy CVE table for the same image.",
       "expectations": [
         "`syft $IMAGE -o cyclonedx-json > .vulnetix/containers/${IMAGE//[\\/:]/_}.cdx.json` is invoked when `binaries.syft: true`",
-        "`vulnetix scan --enable-containers` or `vulnetix containers` is invoked for the Vulnetix layer",
+        "`vulnetix scan --enable-containers` or `vulnetix containers` is invoked for the Vulnesis layer",
         "Output table includes a Fix column with concrete remediation (e.g. base-image bump)",
         "EOL base-image status is sourced from `vulnetix vdb product`",
         "Findings are split per service-name when the input is a docker-compose.yml"

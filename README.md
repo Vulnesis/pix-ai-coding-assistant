@@ -1,17 +1,17 @@
 <p align="center">
-  <img src="pix.svg" alt="Pix, the Vulnetix AI coding assistant" width="160">
+  <img src="pix.svg" alt="Pix, the Vulnesis AI coding assistant" width="160">
 </p>
 
-# Pix: Vulnetix for coding agents
+# Pix: Vulnesis for coding agents
 
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/Vulnetix/pix-ai-coding-assistant)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/Vulnesis/pix-ai-coding-assistant)
 
 Three hooks and eighteen skills. The hooks interrupt only when your agent is
 about to do something your own policy disagrees with; the skills cover the work
 that needs your working tree.
 
-Looking a vulnerability up is not in here. That is the [Vulnetix MCP
-server](https://docs.vulnetix.com/mcp-server/) and the CLI's own subcommands, so a
+Looking a vulnerability up is not in here. That is the [Vulnesis MCP
+server](https://docs.vulnes.is/mcp-server/) and the CLI's own subcommands, so a
 question has one answer instead of three competing descriptions of the same job.
 
 ## Contents
@@ -23,7 +23,7 @@ question has one answer instead of three competing descriptions of the same job.
 - [Configuration](#configuration)
 - [Troubleshooting](#troubleshooting)
 - [Privacy](#privacy)
-- [Full documentation](https://docs.vulnetix.com/pix/)
+- [Full documentation](https://docs.vulnes.is/pix/)
 
 ## Install
 
@@ -41,16 +41,16 @@ safe and tells you nothing changed.
 No CLI yet:
 
 ```bash
-brew install Vulnetix/tap/vulnetix        # or scoop, nix, or:
-curl -fsSL https://cli.vulnetix.com/install.sh | sh
+brew install Vulnesis/tap/vulnetix        # or scoop, nix, or:
+curl -fsSL https://cli.vulnes.is/install.sh | sh
 ```
 
 <details>
 <summary>Registry installs, if you would rather</summary>
 
 ```bash
-gh skill install Vulnetix/pix-ai-coding-assistant
-npx skills add Vulnetix/pix-ai-coding-assistant
+gh skill install Vulnesis/pix-ai-coding-assistant
+npx skills add Vulnesis/pix-ai-coding-assistant
 ```
 
 Both work because the canonical skills live at `skills/` in the repository root,
@@ -60,7 +60,7 @@ hooks and MCP wiring still need `vulnetix agent install`.
 Claude Code marketplace:
 
 ```
-/plugin marketplace add Vulnetix/pix-ai-coding-assistant
+/plugin marketplace add Vulnesis/pix-ai-coding-assistant
 /plugin install vulnetix@vulnetix-plugins
 ```
 </details>
@@ -124,7 +124,7 @@ produce no stored snapshot. Your agent is told this in those words rather than
 being shown an error.
 
 A free Community key with its own quota:
-[vulnetix.com/resolve/register](https://www.vulnetix.com/resolve/register), then:
+[vulnes.is/resolve/register](https://www.vulnes.is/resolve/register), then:
 
 ```bash
 vulnetix auth login
@@ -134,7 +134,7 @@ That prints a URL and a code, and blocks until you approve in a browser. Sign-in
 supports password, GitHub, Google and passkeys.
 
 The CLI finds an existing credential on its own, in this order:
-`VULNETIX_API_TOKEN`; `VULNETIX_API_KEY` + `VULNETIX_ORG_ID`; `VVD_ORG` +
+`VULNESIS_API_TOKEN`; `VULNESIS_API_KEY` + `VULNESIS_ORG_ID`; `VVD_ORG` +
 `VVD_SECRET`; `./.vulnetix/credentials.json`; `~/.vulnetix/credentials.json`; the
 OS keyring; `.netrc`.
 
@@ -193,7 +193,7 @@ Community or your own key.
 
 ## Privacy
 
-- No source code is sent to Vulnetix, only dependency names and versions.
+- No source code is sent to Vulnesis, only dependency names and versions.
 - Manifests are parsed locally by the CLI.
 - Secret detection runs entirely locally; nothing it finds leaves the machine.
 - Proof-of-concept exploits are never executed. `exploit-test` requires you to
@@ -205,9 +205,9 @@ Apache-2.0. See [LICENSE](LICENSE).
 
 ## Resources
 
-- [Plugin documentation](https://docs.vulnetix.com/pix/)
-- [CLI documentation](https://docs.vulnetix.com/cli/)
-- [MCP server](https://www.vulnetix.com/features/mcp-server)
-- [VDB API reference](https://redocly.github.io/redoc/?url=https://api.vdb.vulnetix.com/v1/spec)
+- [Plugin documentation](https://docs.vulnes.is/pix/)
+- [CLI documentation](https://docs.vulnes.is/cli/)
+- [MCP server](https://www.vulnes.is/features/mcp-server)
+- [VDB API reference](https://redocly.github.io/redoc/?url=https://api.vdb.vulnes.is/v1/spec)
 
 Issues: [github.com/Vulnetix/pix-ai-coding-assistant](https://github.com/Vulnetix/pix-ai-coding-assistant).

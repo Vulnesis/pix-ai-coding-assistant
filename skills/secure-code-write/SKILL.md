@@ -11,7 +11,7 @@ metadata:
   cooldown: per-session
   chain: "sast-scan"
 ---
-# Vulnetix Secure Code Write Skill
+# Vulnesis Secure Code Write Skill
 
 ## Use when
 

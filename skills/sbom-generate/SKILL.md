@@ -11,7 +11,7 @@ metadata:
   cooldown: per-session
   chain: "vex-publish"
 ---
-# Vulnetix SBOM Generate Skill
+# Vulnesis SBOM Generate Skill
 
 ## Use when
 
@@ -19,7 +19,7 @@ metadata:
 - Attaching an SBOM to a release artefact (GitHub release, container registry).
 - Submitting to an SBOM registry (e.g. NTIA, in-house).
 - Cosign signing for keyless OIDC supply-chain attestation.
-- Cross-validating Vulnetix output against syft for component-count drift.
+- Cross-validating Vulnesis output against syft for component-count drift.
 
 ## Don't use for
 
@@ -82,7 +82,7 @@ Suggest the `compliance-bundler` agent for a full compliance bundle, or `vex-pub
 
 - `vulnetix scan -o json-cyclonedx` produces CycloneDX 1.7; `vulnetix license -o json-spdx` produces SPDX 2.3. The flags are not interchangeable.
 - Cosign signing requires keyless OIDC identity (Fulcio) or `--key file:cosign.key`. CI runners typically have OIDC; dev laptops may not.
-- Cross-validation with syft requires `binaries.syft: true`. The delta = Vulnetix components - syft components; non-zero delta usually means private packages.
+- Cross-validation with syft requires `binaries.syft: true`. The delta = Vulnesis components - syft components; non-zero delta usually means private packages.
 - CycloneDX 1.7 supports VEX-in-SBOM; pass `--include-vex` to embed the VEX block (otherwise it is a separate file).
 - Output directory `.vulnetix/sboms/<ISO8601>/` is created on every invocation; never overwrites.
 - For repos with no manifest files, the SBOM contains only the application metadata (no components). Check `components.length` before publishing.

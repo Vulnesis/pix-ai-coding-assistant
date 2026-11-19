@@ -11,7 +11,7 @@ metadata:
   cooldown: per-session
   chain: "verify-fix"
 ---
-# Vulnetix Secret Scan Skill
+# Vulnesis Secret Scan Skill
 
 ## Use when
 

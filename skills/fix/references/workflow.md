@@ -75,7 +75,7 @@ Before anything else:
 6. If the memory file has a prior `secret_scanning` section, compare and flag state changes
 7. Store secret scanning findings for persistence in Step 8
 
-### Step 0f: Ensure Vulnetix CLI is Available
+### Step 0f: Ensure Vulnesis CLI is Available
 
 Before running any `vulnetix` command, verify the CLI is callable:
 
@@ -87,18 +87,18 @@ If `vulnetix` is not found, install it automatically using this priority:
 
 1. **Homebrew** (if `brew` exists): `brew install vulnetix/tap/vulnetix`
 2. **Scoop** (Windows, if `scoop` exists): `scoop bucket add vulnetix https://github.com/Vulnetix/scoop-bucket && scoop install vulnetix`
-3. **Nix** (if NixOS or `nix` exists): `nix profile install github:Vulnetix/cli`
+3. **Nix** (if NixOS or `nix` exists): `nix profile install github:Vulnesis/cli`
 4. **GitHub releases** (if `curl`/`wget` exist): Download the correct binary for the OS/arch from `https://github.com/Vulnetix/cli/releases/latest`, extract to `~/.local/bin/`, and `chmod +x`
 5. **Go install** (if `go` exists): `go install github.com/Vulnetix/cli/cmd/vulnetix@latest`
 
 After each install attempt, verify with `command -v vulnetix`. If all methods fail, inform the user:
-> Vulnetix CLI could not be installed automatically. Install manually: `brew install vulnetix/tap/vulnetix` (macOS/Linux), `scoop install vulnetix` (Windows), or download from https://github.com/Vulnetix/cli/releases
+> Vulnesis CLI could not be installed automatically. Install manually: `brew install vulnetix/tap/vulnetix` (macOS/Linux), `scoop install vulnetix` (Windows), or download from https://github.com/Vulnetix/cli/releases
 
 **Abort the skill if the CLI cannot be made available.** Do not proceed with partial results.
 
 ### Step 1: Fetch Fix Data
 
-Run the Vulnetix VDB fixes command for both V1 and V2 endpoints:
+Run the Vulnesis VDB fixes command for both V1 and V2 endpoints:
 
 ```bash
 vulnetix vdb fixes "$ARGUMENTS" -o json

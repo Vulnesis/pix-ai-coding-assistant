@@ -1,6 +1,6 @@
 ---
 name: sast-scan
-description: 'Static application security testing (SAST) for changed source files — Vulnetix''s built-in rule set plus optional Semgrep augmentation when `.semgrep` config is present. Use when reviewing a PR for code-level vulnerabilities, scanning a feature branch before merge, gating CI on critical findings, or running rule-specific checks for a known weakness class.'
+description: 'Static application security testing (SAST) for changed source files — Vulnesis''s built-in rule set plus optional Semgrep augmentation when `.semgrep` config is present. Use when reviewing a PR for code-level vulnerabilities, scanning a feature branch before merge, gating CI on critical findings, or running rule-specific checks for a known weakness class.'
 license: Apache-2.0
 allowed-tools: Bash(vulnetix:*) Read Grep Glob Bash(semgrep:*)
 argument-hint: "[--rule-id ID] [--paths file1 file2] [--baseline]"
@@ -11,7 +11,7 @@ metadata:
   cooldown: per-session
   chain: "secure-code-write, verify-fix"
 ---
-# Vulnetix SAST Skill
+# Vulnesis SAST Skill
 
 ## Use when
 
@@ -19,7 +19,7 @@ metadata:
 - Targeted rule check: "did we just write an XXE pattern?" via `--rule-id VNX-XXE-001`.
 - CI gate: exit non-zero if SAST finds critical-severity issues.
 - Audit a specific weakness class with `--paths <dir> --rule-id VNX-CWE-89-*`.
-- Augment Vulnetix's rules with the repo's own Semgrep policy.
+- Augment Vulnesis's rules with the repo's own Semgrep policy.
 
 ## Don't use for
 
@@ -74,7 +74,7 @@ If running on a PR / branch, write a `.vulnetix/sast/<branch>.summary.yaml` with
 
 - Scope defaults to files changed vs `origin/main`; pass `--paths` for explicit scope. CWD without a manifest = empty results.
 - Output is SARIF — pipe through a SARIF viewer (VS Code SARIF Viewer extension) or render the JSON yourself.
-- Semgrep augmentation requires `binaries.semgrep: true` AND `repo.semgrep_config: true`. Otherwise the skill silently runs Vulnetix rules only.
+- Semgrep augmentation requires `binaries.semgrep: true` AND `repo.semgrep_config: true`. Otherwise the skill silently runs Vulnesis rules only.
 - Built-in rules are organisation-agnostic; rule IDs like `VNX-GQL-004` (GraphQL injection) are not customisable per-repo.
-- Findings are deduped by `<file>:<line>:<rule_id>` across both sources — same logical finding from Semgrep + Vulnetix appears once.
+- Findings are deduped by `<file>:<line>:<rule_id>` across both sources — same logical finding from Semgrep + Vulnesis appears once.
 - Performance: 10K+ file repos benefit from `--paths "src/**/*.ts"` instead of full-repo scan.

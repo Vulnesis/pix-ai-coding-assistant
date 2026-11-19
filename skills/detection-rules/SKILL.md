@@ -11,7 +11,7 @@ metadata:
   cooldown: per-session
   chain: "exploit-test, verify-fix"
 ---
-# Vulnetix Detection Rules Skill
+# Vulnesis Detection Rules Skill
 
 ## Use when
 

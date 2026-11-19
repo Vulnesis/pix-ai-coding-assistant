@@ -1,4 +1,4 @@
-# Vulnetix AI Coding Agent Plugin — Product Requirements
+# Vulnesis AI Coding Agent Plugin — Product Requirements
 
 ## Purpose
 
@@ -11,12 +11,12 @@ graph LR
     subgraph "Developer Machine"
         CC["Claude Code"]
         PLG["pix-ai-coding-assistant<br/>(this repo)"]
-        CLI["Vulnetix CLI<br/>(../cli)"]
+        CLI["Vulnesis CLI<br/>(../cli)"]
         CC --> PLG
         PLG --> CLI
     end
 
-    subgraph "Vulnetix Cloud (AWS)"
+    subgraph "Vulnesis Cloud (AWS)"
         API["VDB API<br/>(../vdb-api)<br/>Vulnerability data"]
         SITE["VDB Site API<br/>(../vdb-site)<br/>Auth & accounts"]
         DB[(PostgreSQL 18<br/>VDB + Accounts)]
@@ -45,7 +45,7 @@ graph LR
 
 ## Repository Dependencies
 
-### Vulnetix CLI (`../cli`)
+### Vulnesis CLI (`../cli`)
 
 The plugin's runtime dependency. Every skill and command shells out to CLI subcommands.
 
@@ -83,10 +83,10 @@ The vulnerability data backend. Aggregates 12+ sources (CVE.org, NVD, VulnCheck,
 
 Account management backend. The plugin depends on it for:
 
-- **Authentication:** `POST /v1/cli/device/authorize` + `/v1/cli/device/token` — RFC 8628 device grant; the user approves in a browser signed in to the Vulnetix identity provider, and the CLI receives an API key
+- **Authentication:** `POST /v1/cli/device/authorize` + `/v1/cli/device/token` — RFC 8628 device grant; the user approves in a browser signed in to the Vulnesis identity provider, and the CLI receives an API key
 - **Account info:** `GET /v1/account` — subscription tier, rate limits
 - **Usage tracking:** `GET /v1/usage` — request counts, audit log
-- **Sign-up:** browser only, at https://www.vulnetix.com/vdb-register (Community tier, free). There is no unauthenticated endpoint that mints credentials from an email.
+- **Sign-up:** browser only, at https://www.vulnes.is/vdb-register (Community tier, free). There is no unauthenticated endpoint that mints credentials from an email.
 
 **Subscription tiers affecting plugin behavior:**
 | Tier | Requests/Day | Cost |
@@ -179,7 +179,7 @@ graph TD
 - **Command implementations** are markdown files in `commands/` with `disable-model-invocation: true`
 - **Hook scripts** are bash, registered in `hooks/hooks.json`, must exit 0 for informational output or non-zero to block
 - **Agent definitions** are markdown files in `agents/` with frontmatter (`name`, `description`, `effort`, `maxTurns`, `allowed-tools`, `model`)
-- **Docs** live in [Vulnetix/platform-docs](https://github.com/Vulnetix/platform-docs) under the `/pix/` segment of https://docs.vulnetix.com. This repo has no docs site: every registered feature must have a corresponding page there
+- **Docs** live in [Vulnesis/platform-docs](https://github.com/Vulnesis/platform-docs) under the `/pix/` segment of https://docs.vulnes.is. This repo has no docs site: every registered feature must have a corresponding page there
 - The canonical schema for `.vulnetix/memory.yaml` is defined in `skills/fix/references/memory-yaml-schema.md`
 - All skills share memory — coordinate writes carefully, especially in the bulk-triage agent
 

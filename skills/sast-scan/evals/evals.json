@@ -27,14 +27,14 @@
     },
     {
       "id": 3,
-      "prompt": "Augment Vulnetix SAST with our own .semgrep rules across the diff and give me one merged report.",
-      "expected_output": "A merged SARIF where Vulnetix findings and local Semgrep findings are de-duped by file:line:rule, with a Source column distinguishing the two engines.",
+      "prompt": "Augment Vulnesis SAST with our own .semgrep rules across the diff and give me one merged report.",
+      "expected_output": "A merged SARIF where Vulnesis findings and local Semgrep findings are de-duped by file:line:rule, with a Source column distinguishing the two engines.",
       "expectations": [
         "Reads `.vulnetix/capabilities.yaml` and verifies BOTH `binaries.semgrep: true` AND `repo.semgrep_config: true` before augmenting",
         "Runs `semgrep --config .semgrep --json --quiet \"$PATHS\"` and writes to `.vulnetix/sast.semgrep.${TIMESTAMP}.json`",
         "De-duplicates findings across both sources by the key `<file>:<line>:<rule_id>`",
-        "Adds a `Source` column to the rendered table distinguishing Vulnetix vs Semgrep origins",
-        "If either capability flag is false, silently runs Vulnetix rules only and notes it"
+        "Adds a `Source` column to the rendered table distinguishing Vulnesis vs Semgrep origins",
+        "If either capability flag is false, silently runs Vulnesis rules only and notes it"
       ]
     }
   ]

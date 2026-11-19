@@ -1,6 +1,6 @@
 ---
 name: compliance-bundler
-description: 'End-to-end compliance bundle agent — CycloneDX SBOM + SPDX licenses + SARIF findings + OpenVEX/CycloneDX VEX, optional cosign signing, optional Vulnetix upload, manifest.json with SHA-256 sums, Markdown index. Use when assembling an audit deliverable, building a customer-facing security disclosure, or producing the quarterly compliance archive.'
+description: 'End-to-end compliance bundle agent — CycloneDX SBOM + SPDX licenses + SARIF findings + OpenVEX/CycloneDX VEX, optional cosign signing, optional Vulnesis upload, manifest.json with SHA-256 sums, Markdown index. Use when assembling an audit deliverable, building a customer-facing security disclosure, or producing the quarterly compliance archive.'
 effort: medium
 maxTurns: 12
 allowed-tools: Bash, Read, Glob, Grep, Edit, Write

@@ -11,7 +11,7 @@ metadata:
   cooldown: per-session
   chain: "verify-fix"
 ---
-# Vulnetix Container Scan Skill
+# Vulnesis Container Scan Skill
 
 ## Use when
 
@@ -25,7 +25,7 @@ metadata:
 
 - Source-code SAST — use `sast-scan`.
 - Cloud-config (Terraform / k8s manifests) — use `iac-scan`.
-- Vulnetix CLI itself does not pull images; for `--image` you need `binaries.docker` or `binaries.podman`.
+- Vulnesis CLI itself does not pull images; for `--image` you need `binaries.docker` or `binaries.podman`.
 
 ## Conventions
 
@@ -35,7 +35,7 @@ Follows `skills/_lib/contract.md`. In short: use the `vulnetix_*` MCP tools when
 
 Read `.vulnetix/capabilities.yaml`. Note: `binaries.{docker,podman,trivy,grype,syft}`, `repo.{dockerfile,containerfile,compose,docker_compose}`. If no container artifacts found AND no `--image` argument, abort with a one-liner.
 
-## Step 2: Run Vulnetix container analysis
+## Step 2: Run Vulnesis container analysis
 
 ```bash
 vulnetix containers --paths "$DOCKERFILE_PATHS" -o json > .vulnetix/containers.${TIMESTAMP}.json

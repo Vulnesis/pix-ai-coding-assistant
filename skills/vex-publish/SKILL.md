@@ -1,6 +1,6 @@
 ---
 name: vex-publish
-description: 'Generate OpenVEX / CycloneDX VEX attestations from `.vulnetix/memory.yaml` triage decisions, optionally sign with cosign, optionally upload to Vulnetix and post to a GitHub PR. Use when documenting triage decisions for supply-chain consumers, attaching VEX to a CycloneDX SBOM, or satisfying customer attestation requests.'
+description: 'Generate OpenVEX / CycloneDX VEX attestations from `.vulnetix/memory.yaml` triage decisions, optionally sign with cosign, optionally upload to Vulnesis and post to a GitHub PR. Use when documenting triage decisions for supply-chain consumers, attaching VEX to a CycloneDX SBOM, or satisfying customer attestation requests.'
 license: Apache-2.0
 allowed-tools: Bash(vulnetix:*) Read Grep Glob Write Bash(cosign:*) Bash(gh:*)
 argument-hint: "[--format openvex|cyclonedx] [--upload]"
@@ -10,7 +10,7 @@ metadata:
   outputBudget: short
   cooldown: per-session
 ---
-# Vulnetix VEX Publication Skill
+# Vulnesis VEX Publication Skill
 
 ## Use when
 
@@ -37,7 +37,7 @@ Read `.vulnetix/memory.yaml`. Collect every entry with a non-default `decision.c
 
 ## Step 2: Map decisions → VEX status
 
-Mapping (Vulnetix CLI uses the same):
+Mapping (Vulnesis CLI uses the same):
 - `not-affected` / `risk-avoided` → `not_affected`
 - `fix-applied` → `fixed`
 - `risk-accepted` / `deferred` / `mitigated` → `affected` (with mitigations)
@@ -88,7 +88,7 @@ PR comment: <yes|no>
 
 - VEX status maps from `decision.choice` via a closed dict — `not-affected/risk-avoided` → `not_affected`, `fix-applied` → `fixed`, `risk-accepted/deferred/mitigated` → `affected (with mitigation)`, `investigating` → `under_investigation`. Custom decision strings break the mapping.
 - `--format openvex` (default) and `--format cyclonedx` produce different schemas; consumers downstream typically prefer one or the other.
-- `--upload` sends to the Vulnetix triage endpoint — requires authenticated CLI; community-tier may rate-limit.
+- `--upload` sends to the Vulnesis triage endpoint — requires authenticated CLI; community-tier may rate-limit.
 - PR comment posting needs `binaries.gh: true` AND the current directory inside a PR-context git repo (CI envs typically have GITHUB_REF set).
 - Signing with cosign uses keyless OIDC by default; the user must have a valid OIDC identity (CI runners typically do, dev laptops may not).
 - Memory schema requires `decision.choice` populated for every entry to be published — entries with `status: under_investigation` are filtered out unless `--include-investigating` is passed.

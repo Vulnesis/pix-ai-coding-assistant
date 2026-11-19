@@ -6,7 +6,7 @@ This skill maintains a `.vulnetix/memory.yaml` file in the repository root that 
 
 ```yaml
 # .vulnetix/memory.yaml
-# Auto-maintained by Vulnetix Claude Code Plugin
+# Auto-maintained by Vulnesis Claude Code Plugin
 # Do not remove — tracks vulnerability decisions, manifest scans, and fix history
 
 schema_version: 1

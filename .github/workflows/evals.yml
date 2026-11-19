@@ -55,7 +55,7 @@ jobs:
         continue-on-error: true
         uses: actions/checkout@v7.0.1
         with:
-          repository: Vulnetix/vulnetix-fixture-app
+          repository: Vulnesis/vulnetix-fixture-app
           path: .fixture-repo
           token: ${{ secrets.GH_MODULES_PAT }}
 
@@ -64,7 +64,7 @@ jobs:
       # not contain — the drift that made the previous corpus dormant.
       - name: Validate the corpus
         env:
-          VULNETIX_FIXTURE: ${{ github.workspace }}/.fixture-repo
+          VULNESIS_FIXTURE: ${{ github.workspace }}/.fixture-repo
         run: node scripts/eval.mjs
 
       # Seeded property tests for the helpers the gate relies on: stream
@@ -103,7 +103,7 @@ jobs:
         if: steps.gate.outputs.skip != 'true'
         uses: actions/checkout@v7.0.1
         with:
-          repository: Vulnetix/vulnetix-fixture-app
+          repository: Vulnesis/vulnetix-fixture-app
           path: .fixture-repo
           token: ${{ secrets.GH_MODULES_PAT }}
 
@@ -113,7 +113,7 @@ jobs:
           # Download to a file, never `curl | sh`: a failed download would
           # otherwise run an empty script and pass the step.
           curl -fsSL --retry 5 --retry-all-errors --retry-delay 5 \
-            -o "$RUNNER_TEMP/vulnetix-install.sh" https://cli.vulnetix.com/install.sh
+            -o "$RUNNER_TEMP/vulnetix-install.sh" https://cli.vulnes.is/install.sh
           sh "$RUNNER_TEMP/vulnetix-install.sh"
 
       - name: Wire the agents on this runner
@@ -125,9 +125,9 @@ jobs:
       - name: Run the evals
         if: steps.gate.outputs.skip != 'true'
         env:
-          VULNETIX_FIXTURE: ${{ github.workspace }}/.fixture-repo
-          VULNETIX_API_KEY: ${{ secrets.VULNETIX_API_KEY }}
-          VULNETIX_ORG_ID: ${{ secrets.VULNETIX_ORG_ID }}
+          VULNESIS_FIXTURE: ${{ github.workspace }}/.fixture-repo
+          VULNESIS_API_KEY: ${{ secrets.VULNESIS_API_KEY }}
+          VULNESIS_ORG_ID: ${{ secrets.VULNESIS_ORG_ID }}
         run: |
           if [ -n "${{ inputs.agents }}" ]; then
             node scripts/eval.mjs --agents="${{ inputs.agents }}"
@@ -140,7 +140,7 @@ jobs:
       - name: Record the demos
         if: steps.gate.outputs.skip != 'true'
         env:
-          VULNETIX_FIXTURE: ${{ github.workspace }}/.fixture-repo
+          VULNESIS_FIXTURE: ${{ github.workspace }}/.fixture-repo
         run: node scripts/record-demos.mjs
 
       - uses: actions/upload-artifact@v7.0.2

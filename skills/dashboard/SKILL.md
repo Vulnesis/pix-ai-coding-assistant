@@ -10,7 +10,7 @@ metadata:
   cooldown: per-session
   chain: "repo-impact"
 ---
-# Vulnetix Vulnerability Dashboard
+# Vulnesis Vulnerability Dashboard
 
 ## Use when
 
@@ -60,7 +60,7 @@ From the `manifests:` section, collect manifest tracking info.
 ### Step 3: Display Summary Header
 
 ```
-Vulnetix Security Dashboard
+Vulnesis Security Dashboard
 ============================
 Open: <N> (<X> vulnerable, <Y> investigating)
 Resolved: <N> (<X> fixed, <Y> not affected, <Z> risk-accepted, <W> deferred)

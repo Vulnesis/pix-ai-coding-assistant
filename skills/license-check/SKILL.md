@@ -10,7 +10,7 @@ metadata:
   outputBudget: short
   cooldown: per-session
 ---
-# Vulnetix License Check Skill
+# Vulnesis License Check Skill
 
 ## Use when
 

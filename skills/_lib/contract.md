@@ -5,7 +5,7 @@ rather than restating it.
 
 ---
 
-## 1. How to reach Vulnetix
+## 1. How to reach Vulnesis
 
 There are two surfaces and one order of preference. Take the first that applies.
 
@@ -21,10 +21,10 @@ in this library that touches the repository uses it even when MCP is available.
 
 ```bash
 command -v vulnetix >/dev/null 2>&1 || {
-  brew install Vulnetix/tap/vulnetix 2>/dev/null ||
+  brew install Vulnesis/tap/vulnetix 2>/dev/null ||
   scoop install vulnetix 2>/dev/null ||
-  nix profile install github:Vulnetix/cli 2>/dev/null ||
-  curl -fsSL https://cli.vulnetix.com/install.sh | sh
+  nix profile install github:Vulnesis/cli 2>/dev/null ||
+  curl -fsSL https://cli.vulnes.is/install.sh | sh
 }
 ```
 
@@ -32,8 +32,8 @@ Then `vulnetix agent install`, which wires this machine's agents up properly —
 hooks in each host's own dialect, skills in each host's real directory, and the
 MCP server configured where the host speaks MCP.
 
-**4. Credentials.** The CLI finds them itself, in this order: `VULNETIX_API_TOKEN`;
-`VULNETIX_API_KEY` + `VULNETIX_ORG_ID`; `VVD_ORG` + `VVD_SECRET`;
+**4. Credentials.** The CLI finds them itself, in this order: `VULNESIS_API_TOKEN`;
+`VULNESIS_API_KEY` + `VULNESIS_ORG_ID`; `VVD_ORG` + `VVD_SECRET`;
 `./.vulnetix/credentials.json`; `~/.vulnetix/credentials.json`; the OS keyring;
 `.netrc`. Do not re-derive this and do not ask the user for a key you could have
 found.
@@ -45,7 +45,7 @@ words, rather than presenting it as an error:
 
 > Running on the shared Community tier — reads work, rate limits are shared, and
 > scans produce no stored snapshot. A free Community key with its own quota:
-> https://www.vulnetix.com/resolve/register, then `vulnetix auth login`.
+> https://www.vulnes.is/resolve/register, then `vulnetix auth login`.
 
 `vulnetix auth login` runs a browser device grant: it prints a URL and a code that
 expires in five minutes, then blocks until the user approves. **You cannot

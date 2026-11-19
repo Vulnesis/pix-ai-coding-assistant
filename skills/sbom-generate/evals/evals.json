@@ -21,7 +21,7 @@
         "Generates `sbom.cdx.json` via `vulnetix scan -o json-cyclonedx` AND `sbom.spdx.json` via `vulnetix license -o json-spdx`",
         "Reads `.vulnetix/capabilities.yaml`; if `binaries.cosign: true`, runs `cosign sign-blob --yes ... --bundle $OUT/sbom.cdx.json.sig.bundle`",
         "If `binaries.cosign: false`, surfaces an install hint and skips signing rather than failing silently",
-        "If `binaries.syft: true`, runs `syft \"$(pwd)\" -o cyclonedx-json > $OUT/sbom.syft.cdx.json` and reports the component-count delta vs Vulnetix",
+        "If `binaries.syft: true`, runs `syft \"$(pwd)\" -o cyclonedx-json > $OUT/sbom.syft.cdx.json` and reports the component-count delta vs Vulnesis",
         "Never overwrites a previous SBOM — each invocation creates a new ISO8601-stamped directory"
       ]
     },
