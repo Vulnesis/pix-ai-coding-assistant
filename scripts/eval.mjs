@@ -152,7 +152,7 @@ console.log(
 if (!truth) {
 	console.log(
 		`  ground truth skipped: no fixture at ${FIXTURE}\n` +
-			"  (Vulnesis/vulnetix-fixture-app is private; set VULNESIS_FIXTURE or provide a token)",
+			"  (Vulnetix/vulnetix-fixture-app is private; set VULNETIX_FIXTURE or provide a token)",
 	);
 }
 

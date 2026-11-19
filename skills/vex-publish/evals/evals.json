@@ -15,8 +15,8 @@
     },
     {
       "id": 2,
-      "prompt": "Generate a CycloneDX VEX attestation from our triage decisions and upload it to Vulnesis so customers can consume it alongside the SBOM.",
-      "expected_output": "A CycloneDX VEX document generated and uploaded via the Vulnesis CLI, with the local path and upload confirmation surfaced in the report.",
+      "prompt": "Generate a CycloneDX VEX attestation from our triage decisions and upload it to Vulnetix so customers can consume it alongside the SBOM.",
+      "expected_output": "A CycloneDX VEX document generated and uploaded via the Vulnetix CLI, with the local path and upload confirmation surfaced in the report.",
       "expectations": [
         "Invokes `vulnetix triage --provider vulnetix --vex-format cyclonedx -o json` (CycloneDX schema, not OpenVEX)",
         "Writes the artifact under .vulnetix/vex/<timestamp>.vex.json",

@@ -134,7 +134,7 @@ That prints a URL and a code, and blocks until you approve in a browser. Sign-in
 supports password, GitHub, Google and passkeys.
 
 The CLI finds an existing credential on its own, in this order:
-`VULNESIS_API_TOKEN`; `VULNESIS_API_KEY` + `VULNESIS_ORG_ID`; `VVD_ORG` +
+`VULNETIX_API_TOKEN`; `VULNETIX_API_KEY` + `VULNETIX_ORG_ID`; `VVD_ORG` +
 `VVD_SECRET`; `./.vulnetix/credentials.json`; `~/.vulnetix/credentials.json`; the
 OS keyring; `.netrc`.
 
@@ -208,6 +208,6 @@ Apache-2.0. See [LICENSE](LICENSE).
 - [Plugin documentation](https://docs.vulnes.is/pix/)
 - [CLI documentation](https://docs.vulnes.is/cli/)
 - [MCP server](https://www.vulnes.is/features/mcp-server)
-- [VDB API reference](https://redocly.github.io/redoc/?url=https://api.vdb.vulnes.is/v1/spec)
+- [VDB API reference](https://redocly.github.io/redoc/?url=https://api-vdb.vulnes.is/v1/spec)
 
 Issues: [github.com/Vulnetix/pix-ai-coding-assistant](https://github.com/Vulnesis/pix-ai-coding-assistant).

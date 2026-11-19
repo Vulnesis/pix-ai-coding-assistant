@@ -1,7 +1,7 @@
 # Development files
 .verification-report.txt
 
-# Local Vulnesis plugin state (auto-created by hooks)
+# Local Vulnetix plugin state (auto-created by hooks)
 .vulnetix/
 
 # CLI quirk: a few subcommands write to a literal file named "json"

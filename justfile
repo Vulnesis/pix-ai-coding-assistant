@@ -1,6 +1,6 @@
 # Pix — plugin tasks.
 #
-# The docs live in Vulnesis/platform-docs, under https://docs.vulnes.is/pix/.
+# The docs live in Vulnetix/platform-docs, under https://docs.vulnetix.com/pix/.
 
 default:
     @just --list
