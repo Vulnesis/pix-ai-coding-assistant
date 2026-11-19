@@ -28,6 +28,13 @@ command -v vulnetix >/dev/null 2>&1 || {
 }
 ```
 
+**Brand.** Vulnetix (vulnetix.com) is the default. If `VULNETIX_BRAND` (or its
+alias `VULNESIS_BRAND`) is `vulnesis`, use the vulnes.is equivalent of every
+vulnetix.com URL in this library instead — `vulnetix.com` becomes `vulnes.is`,
+and a deeper host joins its labels with hyphens (`cli.vulnetix.com` →
+`cli.vulnes.is`, `api.vdb.vulnetix.com` → `api-vdb.vulnes.is`). Only the host
+changes; command names and `VULNETIX_*` variables stay as they are.
+
 Then `vulnetix agent install`, which wires this machine's agents up properly —
 hooks in each host's own dialect, skills in each host's real directory, and the
 MCP server configured where the host speaks MCP.
@@ -46,6 +53,9 @@ words, rather than presenting it as an error:
 > Running on the shared Community tier — reads work, rate limits are shared, and
 > scans produce no stored snapshot. A free Community key with its own quota:
 > https://www.vulnes.is/resolve/register, then `vulnetix auth login`.
+
+(Under `VULNETIX_BRAND=vulnesis`, quote https://www.vulnes.is/resolve/register
+instead.)
 
 `vulnetix auth login` runs a browser device grant: it prints a URL and a code that
 expires in five minutes, then blocks until the user approves. **You cannot
